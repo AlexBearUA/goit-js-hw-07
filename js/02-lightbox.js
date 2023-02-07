@@ -14,16 +14,7 @@ function createGalleryMarkup(images) {
     .join("");
 }
 
-galleryContainer.addEventListener("click", galleryClickHandler);
-
-function galleryClickHandler(evt) {
-  evt.preventDefault();
-  if (evt.target.nodeName !== "IMG") {
-    return;
-  }
-  console.log(evt.target.alt);
-  const biggerImage = new SimpleLightbox(".gallery a", {
-    captionDelay: 250,
-    captionsData: "alt",
-  });
-}
+const SimpleLightboxGallery = new SimpleLightbox(".gallery a", {
+  captionDelay: 250,
+  captionsData: "alt",
+});
