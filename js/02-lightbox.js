@@ -1,15 +1,15 @@
 import { galleryItems } from "./gallery-items.js";
 
-const galleryContainer = document.querySelector("ul.gallery");
+const galleryContainer = document.querySelector("div.gallery");
 const galleryMarkup = createGalleryMarkup(galleryItems);
 galleryContainer.insertAdjacentHTML("beforeend", galleryMarkup);
 
 function createGalleryMarkup(images) {
   return images
     .map(({ preview, original, description }) => {
-      return `<li><a class="gallery__item" href="${original}">
+      return `<a class="gallery__item" href="${original}">
   <img class="gallery__image" src="${preview}" alt="${description}"/>
-</a></li>`;
+</a>`;
     })
     .join("");
 }
