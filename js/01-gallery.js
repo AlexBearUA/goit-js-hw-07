@@ -31,11 +31,7 @@ function galleryClickHandler(evt) {
   }
 
   const biggerImage = basicLightbox.create(
-    `   
-    <div class="modal">
-      <img src="${evt.target.dataset.source}">
-    </div>
-`,
+    `<img src="${evt.target.dataset.source}">`,
     {
       onShow: () => {
         window.addEventListener("keydown", EscKeyPressHandler);
